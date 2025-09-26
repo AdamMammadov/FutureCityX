@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FutureCity X — Gələcəyin Şəhəri</title>
+  <meta name="description" content="FutureCity X — interaktiv futuristik şəhər. JSON-driven, canvas animasiya, timeline, kosmos & zaman bölmələri.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='80'%3E🚀%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="brand" id="brand">
+        <svg class="logo" viewBox="0 0 120 120" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="lg" x1="0" x2="1">
+              <stop offset="0" stop-color="#6EE7F9"/>
+              <stop offset="1" stop-color="#8B5CF6"/>
+            </linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <circle cx="60" cy="60" r="48" fill="url(#lg)" filter="url(#glow)"/>
+          <path d="M36 80 L60 36 L84 80 Z" fill="#04132a" opacity="0.95"/>
+        </svg>
+        <div class="brand-text">
+          <h1>FutureCity <span>X</span></h1>
+          <p class="muted">Gələcəyin şəhəri: zaman + kosmos + ağıllı sistemlər</p>
+        </div>
+      </div>
+
+       <nav class="nav" aria-label="Əsas naviqasiya">
+        <button id="theme-toggle" class="icon-btn" aria-pressed="false" title="Tema dəyişdir">🌙</button>
+        <a class="nav-link" href="#city">Şəhər</a>
+        <a class="nav-link" href="#academy">Kosmos Akademiyası</a>
+        <a class="nav-link" href="#timeline">Zaman Mərkəzi</a>
+        <a class="nav-cta" href="#contact">Əlaqə</a>
+        <button id="menu-toggle" class="icon-btn mobile-only" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </nav>
+    </div>
+
+    <div id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#city">Şəhər</a>
+      <a href="#academy">Kosmos Akademiyası</a>
+      <a href="#timeline">Zaman Mərkəzi</a>
+      <a href="#contact">Əlaqə</a>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-overlay container">
+        <h2 class="hero-title">FutureCity <span>X</span></h2>
+        <p class="hero-sub">Gələcəyin şəhəri — AI nəqliyyat, yaşıl enerji, kosmos akademiyası və zaman səyahəti ilə sintez.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#city">Şəhəri Kəşf Et</a>
+          <a class="btn ghost" href="#timeline">Zaman Xəttinə Bax</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITY SECTORS -->
+    <section id="city" class="section container">
+      <div class="section-head">
+        <h3>Şəhər Sektorları</h3>
+        <div class="controls">
+          <input id="search" placeholder="Sektor və ya açar söz axtar..." aria-label="Search sectors">
+          <select id="sector-filter" aria-label="Filter sectors"><option value="all">Hamısı</option></select>
+        </div>
+      </div>
+      <div class="photos">
+      <img src="images/SmartHome.png" class="s-1" style="height: 150px; border-radius: 10px;display: flex; align-items: center; justify-content: center;font-weight: 700;overflow: hidden;font-size: .85rem; color: var(--muted); margin-top: auto; display: flex; gap: .4rem; flex-wrap: wrap;">
+      <img src="images/Transport.jpg" class="s-2" style="height: 150px; border-radius: 10px;display: flex; align-items: center; justify-content: center;font-weight: 700;overflow: hidden;font-size: .85rem; color: var(--muted);margin-top: auto; display: flex; gap: .4rem; flex-wrap: wrap;">
+      <img src="images/Energy&Grid.png" class="s-3" style="height: 150px; border-radius: 10px;display: flex; align-items: center; justify-content: center;font-weight: 700;overflow: hidden;font-size: .85rem; color: var(--muted);margin-top: auto; display: flex; gap: .4rem; flex-wrap: wrap;">
+      <img src="images/health.jpg" class="s-4" style="height: 150px; border-radius: 10px;display: flex; align-items: center; justify-content: center;font-weight: 700;overflow: hidden;">
+      </div>
+      <div id="city-grid" class="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- INTERACTIVE SKYLINE -->
+    <section id="map" class="map-section">
+      <div class="container map-wrap">
+        <h4 class="map-title">Interaktiv Skyline</h4>
+        <div id="skyline" class="skyline" aria-hidden="false" tabindex="0">
+          <!-- skyline JS ilə render olunacaq -->
+        </div>
+        <p class="muted small">Binaların üzərinə hover et və sektor haqqında qısa məlumat əldə et.</p>
+      </div>
+    </section>
+
+    <!-- SPACE ACADEMY -->
+    <section id="academy" class="section container">
+      <div class="section-head">
+        <h3>Kosmos Akademiyası</h3>
+        <p class="muted">Kosmik texnologiyalar üzrə kurslar və təlimlər</p>
+      </div>
+      <div id="academy-grid" class="grid"></div>
+    </section>
+
+    <section class="section news-section" id="news">
+  <div class="container">
+    <div class="section-head">
+    </div>
+    <div id="news-grid" class="grid"></div>
+  </div>
+</section>
+
+
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section container">
+      <div class="section-head">
+        <h3>Zaman Mərkəzi — Timeline</h3>
+        <p class="muted">İlin 2025-dən 2100-ə qədər texnoloji proqnozlar.</p>
+      </div>
+      <div id="timeline-wrap" class="timeline-wrap">
+        <div id="timeline-line" class="timeline-line" aria-hidden="true"></div>
+        <div id="timeline-events" class="timeline-events"></div>
+      </div>
+    </section>
+
+    <section id="stats" class="section">
+  <div class="container">
+    <div class="section-head">
+      <h2>Future Stats Dashboard</h2>
+      <p class="muted">Şəhərin inkişaf göstəriciləri</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3 id="energy-counter">67%</h3>
+        <p>Yaşıl enerji istifadəsi</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="transport-counter">13K+</h3>
+        <p>AI nəqliyyat vasitələri</p>
+      </div>
+      <div class="stat-card">
+        <h3 id="health-counter">7000+</h3>
+        <p>Telemed xidmətləri</p>
+      </div>
+    </div>
+    <canvas id="stats-chart" height="180"></canvas>
+  </div>
+</section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container contact-section">
+      <div class="section-head">
+        <h3>Əlaqə & İdeya Göndər</h3>
+        <p class="muted">Sən də öz ideyanı buradan göndər.</p>
+      </div>
+
+      <form id="idea-form" class="idea-form" aria-label="İdeya göndər">
+        <div class="row">
+          <input id="name" name="name" type="text" placeholder="Ad" required>
+          <input id="email" name="email" type="email" placeholder="Email" required>
+        </div>
+        <input id="subject" name="subject" type="text" placeholder="Qısa başlıq" required>
+        <textarea id="idea" name="idea" rows="5" placeholder="İdeyanı təsvir et..." required></textarea>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Göndər</button>
+          <button type="reset" class="btn ghost">Təmizlə</button>
+        </div>
+        <p id="form-msg" class="muted small" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer container">
+    <div class="footer-inner">
+      <p>Copyright © <span id="year"></span> FutureCity X — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL ================= -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-panel" role="document" tabindex="-1">
+      <button id="modal-close" class="modal-close" aria-label="Bağla">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- INLINE FALLBACK JSON -->
+  <script id="inline-data" type="application/json">
+  {
+    "sectors": [
+      {
+        "id":"s-1","title":"Smart Ev Texnologiyaları","category":"Energy & Home",
+        "short":"Ağıllı evlər — enerji optimallaşdırma və klima.",
+        "description":"Smart Evlər FutureCity-də enerji effektivliyini və istifadəçi rahatlığını artırır: ağıllı termostatlar, şəbəkələşmiş cihazlar və s.",
+        "color":["#00f5a0","#00b4d8"], "skylineIndex":1, "tags":["home","energy"] 
+      },
+      {
+        "id":"s-2","title":"AI Nəqliyyat","category":"Transport",
+        "short":"Avtomatik, dron və uçan nəqliyyat sistemləri.",
+        "description":"AI nəqliyyat sistemi real vaxt marşrutlaşdırma, dron çatdırma və uçan taksiləri koordinasiya edir.",
+        "color":["#7c3aed","#06b6d4"], "skylineIndex":2, "tags":["transport","ai"]
+      },
+      {
+        "id":"s-3","title":"Yaşıl Enerji","category":"Energy & Grid",
+        "short":"Bərpa olunan enerji və mikrogrid-lər.",
+        "description":"Günəş panelləri, şəhər külək turbinləri və enerji saxlanma həlləri FutureCity-nin dayaqlarıdır.",
+        "color":["#f97316","#f43f5e"], "skylineIndex":3, "tags":["energy","green"]
+      }
+    ],
+    "academy": [
+      {"id":"a-1","title":"Orbital Systems 101","level":"Intro","short":"Orbital mexanika əsasları","duration":"6 həftə","tags":["space","intro"]},
+      {"id":"a-2","title":"AI for Autonomous Vessels","level":"Advanced","short":"Avtonom nəqliyyat üçün AI","duration":"8 həftə","tags":["ai","advanced"]}
+    ],
+    "timeline": [
+      {"year":2025,"title":"Başlanğıc","desc":"FutureCity prototipi — pilot layihələr başladı.","milestones":["Pilot smart blok","Dron çatdırma"]},
+      {"year":2035,"title":"Mass Adoption","desc":"AI nəqliyyat və mikrogrid-lər geniş yayıldı.","milestones":["Uçan taxi testləri","Net-zero kvartallar"]},
+      {"year":2050,"title":"Global Interconnect","desc":"Şəhər interkonnektiv arxitekturası və space-lift protokolları.","milestones":["Space Campus","Teleportation R&D (konsept)"]}
+    ]
+  }
+  </script>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>

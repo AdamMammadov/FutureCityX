@@ -1,0 +1,134 @@
+{
+  "sectors": [
+    {
+      "id": "s-1",
+      "title": "Smart Ev Texnologiyaları",
+      "category": "Energy & Home",
+      "short": "Ağıllı evlər — enerji optimallaşdırma və rahatlıq.",
+      "description": "Smart Ev sistemləri enerji istifadəsini avtomatik optimallaşdırır, şəxsiyyətə uyğun komfort təmin edir və IoT cihazlarını mərkəzləşdirir.",
+      "color": ["#00f5a0","#00b4d8"],
+      "skylineIndex": 1,
+      "tags": ["home","energy","iot"],
+      "image": "images/SmartHome.png"
+    },
+    {
+      "id": "s-2",
+      "title": "AI Nəqliyyat",
+      "category": "Transport",
+      "short": "Avtonom avtomobillər, dronlar və uçan taksilər.",
+      "description": "AI əsaslı nəqliyyat şəbəkələri real vaxt marşrutlaşdırma, qəza monitorinqi və inteqrasiya edilmiş dron çatdırma sistemlərini təmin edir.",
+      "color": ["#7c3aed","#06b6d4"],
+      "skylineIndex": 2,
+      "tags": ["transport","ai","drones"],
+      "image": "images/Transport.png"
+    },
+    {
+      "id": "s-3",
+      "title": "Yaşıl Enerji",
+      "category": "Energy & Grid",
+      "short": "Bərpa olunan enerji və smart şəbəkələr.",
+      "description": "Günəş və külək enerji sistemləri ilə birlikdə microgrid-lər şəhərin enerji asılılığını azaldır və dayanıqlığı artırır.",
+      "color": ["#f97316","#f43f5e"],
+      "skylineIndex": 3,
+      "tags": ["energy","green","grid"],
+      "image": "images/Energy&Grid.png"
+    },
+    {
+      "id": "s-4",
+      "title": "Sağlamlıq Texnologiyaları",
+      "category": "Health",
+      "short": "Telemedicina və AI diaqnostika.",
+      "description": "Smart sağlamlıq sistemləri uzaq diaqnostika, data-driven müalicələr və şehir içi sağlamlıq xidmətlərini təmin edir.",
+      "color": ["#06b6d4","#7c3aed"],
+      "skylineIndex": 4,
+      "tags": ["health","telemed"],
+      "image": "images/health.png"
+    }
+  ],
+  "academy": [
+    {
+      "id": "a-1",
+      "title": "Orbital Systems 101",
+      "level": "Intro",
+      "short": "Orbital mexanika və kosmik əməliyyatlara giriş,",
+      "duration": "6 həftə",
+      "tags": ["space","intro"]
+    },
+    {
+      "id": "a-2",
+      "title": "AI for Autonomous Vessels",
+      "level": "Advanced",
+      "short": "Avtonom nəqliyyat üçün dərin öyrənmə, sensor inteqrasiyası və real vaxt qərar qəbuletmə.",
+
+      "duration": "8 həftə",
+      "tags": ["ai","advanced"]
+    },
+    {
+      "id": "a-3",
+      "title": "Energy Grid Management",
+      "level": "Intermediate",
+      "short": "Smart grid idarəçiliyi və optimallaşdırma texnikaları.",
+      "duration": "6 həftə",
+      "tags": ["energy","grid"]
+    }
+  ],
+  "timeline": [
+    {
+      "year": 2025,
+      "title": "Başlanğıc",
+      "desc": "FutureCity prototipi hazırlanır — pilot layihələr və POC-lar.",
+      "milestones": ["Pilot smart blok", "Dron çatdırma"],
+      "color": ["#00f5a0","#00b4d8"]
+    },
+    {
+      "year": 2035,
+      "title": "Mass Adoption",
+      "desc": "AI nəqliyyat və mikrogrid-lərin genişlənməsi.",
+      "milestones": ["Uçan taxi testləri", "Net-zero kvartallar"],
+      "color": ["#7c3aed","#06b6d4"]
+    },
+    {
+      "year": 2050,
+      "title": "Global Interconnect",
+      "desc": "Şəhərlər arası interkonnektiv sistemlər və kosmik kampuslar.",
+      "milestones": ["Space Campus", "Teleportation R&D (konsept)"],
+      "color": ["#f97316","#ff6b6b"]
+    },
+    {
+      "year": 2100,
+      "title": "Utopian Network",
+      "desc": "Tam inteqrasiya — enerji, nəqliyyat və sağlamlıq sinerjisi.",
+      "milestones": ["Sıfır tullantı şehir", "AI-həkimIntegrator"],
+      "color": ["#8B5CF6","#6EE7F9"]
+    }
+  ],
+   "news": [
+  {
+    "id": "n-1",
+    "title": "AI Taksi Testləri Başladı",
+    "date": "2032-04-15",
+    "excerpt": "Gələcəyin şəhərində ilk dəfə olaraq AI əsaslı uçan taksilər sınaqdan keçirildi.",
+    "image": "https://via.placeholder.com/400x250/06b6d4/ffffff?text=AI+Taxi"
+  },
+  {
+    "id": "n-2",
+    "title": "100% Yaşıl Enerji Kvartalı",
+    "date": "2035-07-01",
+    "excerpt": "Yeni smart kvartal bütün enerjisini günəş və küləkdən təmin edir.",
+    "image": "https://via.placeholder.com/400x250/f97316/ffffff?text=Green+Energy"
+  },
+  {
+    "id": "n-3",
+    "title": "Kosmos Akademiyasında İlk Məzunlar",
+    "date": "2040-09-20",
+    "excerpt": "Orbital Systems 101 kursunun məzunları kosmik layihələrdə işə başladılar.",
+    "image": "https://via.placeholder.com/400x250/8b5cf6/ffffff?text=Space+Graduates"
+  }
+],
+"stats": {
+  "population": 1200000,
+  "greenEnergy": 68,
+  "aiVehicles": 4520,
+  "healthAI": 320
+}
+}
